@@ -54,11 +54,20 @@ Finally, serve the application.
 	* http://127.0.0.1:8000/teams/1
 	* http://127.0.0.1:8000/players
 	* http://127.0.0.1:8000/players/1
+	
+A controller  APIController available in this project  which will send internal API calls to this endpoints and demonstrated the result using UI.
+APi and UI demos are available , You can check each one using available Menus.
+
+For more details regarding API , check below document.
+
+https://documenter.getpostman.com/view/16703545/TzsfkjpK
 
 You can use below username and password for login as admin
 
 	sinujose007@gmail.com
 	12345678
+
+After Login you can test create/update/delete activities.	
 
 For permission management laravel/spatie package is using.
 
