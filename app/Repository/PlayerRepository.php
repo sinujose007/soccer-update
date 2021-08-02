@@ -29,6 +29,16 @@ class PlayerRepository implements PlayerRepositoryInterface
 	}
 	
 	/**
+     * Create a method to fetch the single team details based on id.
+     *
+     * @return collections
+     */	
+	public function getSinglePlayer(object $player) : object{
+		$player->team = $player->team;
+		return $player;		
+	}	
+	
+	/**
      * Method to create a new record in the player table.
      *
      * @return collections
@@ -46,6 +56,19 @@ class PlayerRepository implements PlayerRepositoryInterface
 	public function updatePlayer(array $player,int $id) : bool {
 		$player = Player::where('id', $id)->update($player);
 		return true;
+	}
+	
+	/**
+     * Method to delete a records in the player table
+     *
+     * @return bool
+     */
+	public function deletePlayer(int $id) : bool {
+		if (Player::destroy($id)) {
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 }

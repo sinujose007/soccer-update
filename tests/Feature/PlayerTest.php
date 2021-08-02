@@ -28,7 +28,7 @@ class PlayerTest extends TestCase
      */
 	public function testRetrievePlayerSuccessfully()
     {
-		$response = $this->json('GET', '/players/1', ['Accept' => 'application/json']);
+		$response = $this->json('GET', '/players/6', ['Accept' => 'application/json']);
         
 		$response->assertStatus(200);
 	}

@@ -10004,3 +10004,7 @@ h3 {
     border-color: #dee2e6;
   }
 }
+
+.pagination li{
+	margin:2px;
+}

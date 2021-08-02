@@ -22,8 +22,28 @@ class TeamRepository implements TeamRepositoryInterface
      *
      * @return collections
      */
-	public function getAllTeams():object {		
+	public function getAllTeams() : object {		
+		return Team::All();
+	}
+	
+	/**
+     * Create a method to fetch the lists of all teams.
+     *
+     * @return collections
+     */
+	public function getAllTeamsPaging() : object {		
 		return Team::latest()->paginate(5);
+	}
+	
+	/**
+     * Create a method to fetch the single team details based on id.
+     *
+     * @return collections
+     */	
+	public function getSingleTeam(object $team) : object{
+		$team->players = $team->players;
+		return $team;
+		
 	}
 	
 	/**
@@ -45,5 +65,17 @@ class TeamRepository implements TeamRepositoryInterface
 		$team = Team::where('id', $id)->update($team);
 		return true;
 	}
-
+	
+	/**
+     * Method to delete a records in the team table
+     *
+     * @return bool
+     */
+	public function deleteTeam(int $id) : bool {
+		if (Team::destroy($id)) {
+			return true;
+		}else{
+			return false;
+		}
+	}
 }

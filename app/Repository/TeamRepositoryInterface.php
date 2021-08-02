@@ -6,7 +6,13 @@ interface TeamRepositoryInterface{
 	
 	public function getAllTeams() : object;
 	
-	public function createTeam(array $player) : object;
+	public function getAllTeamsPaging() : object;
 	
-	public function updateTeam(array $player, int $id) : bool;
+	public function getSingleTeam(object $team) : object;
+	
+	public function createTeam(array $team) : object;
+	
+	public function updateTeam(array $team, int $id) : bool;
+	
+	public function deleteTeam(int $id) : bool;
 }

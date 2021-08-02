@@ -15,8 +15,6 @@ use App\Http\Controllers\PlayerController;
 |
 */
 
-Route::get('/teams', 'App\Http\Controllers\TeamController@index');
-Route::get('/players', 'App\Http\Controllers\PlayerController@index');
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+Route::resource('teams', TeamController::class);
+Route::resource('players', PlayerController::class);
